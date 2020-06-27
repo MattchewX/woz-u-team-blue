@@ -1,3 +1,3 @@
 # Team Blue
 
-Not actually blue though
+Creating a food ordering app that isn't overly complicated
