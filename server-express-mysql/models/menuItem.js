@@ -1,6 +1,6 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Task = sequelize.define(
+  const menuItem = sequelize.define(
     "menuItem",
     {
       id: {
