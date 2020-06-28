@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  Task.associate = function(models) {
+  menuItem.associate = function(models) {
     // associations can be defined here
   };
   return menuItem;

@@ -32,7 +32,7 @@ router.put("/:id", function(req, res, next) {
     {
       where: { id: parseInt(req.params.id) }
     }
-  ).then(task => res.json(task));
+  ).then(menuItem => res.json(menuItem));
 });
 
 module.exports = router;
