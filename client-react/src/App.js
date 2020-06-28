@@ -1,11 +1,11 @@
 import React from "react";
-import  Task from "./components/Task";
+import  addMenuItem from "./components/addMenuItem";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Task />
+      <addMenuItem />
     </div>
   );
 }
