@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import '../task.min.css'
-class addMenuItem extends React.Component {
+class AddMenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = { menuItems: [] };
@@ -25,7 +25,7 @@ class addMenuItem extends React.Component {
   };
 
   addMenuItem = () => {
-    let url = "http://localhost:3001/tasks";
+    let url = "http://localhost:3001/menuItems";
     axios.post(url, { name: this.menuItem.current.value }).then(response => {
       // refresh the data
       this.getData();
@@ -53,4 +53,4 @@ class addMenuItem extends React.Component {
   }
 }
 
-export default addMenuItem;
+export default AddMenuItem;

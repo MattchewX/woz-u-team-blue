@@ -1,14 +1,13 @@
 import React from "react";
-import  addMenuItem from "./components/addMenuItem";
+import  AddMenuItem from "./components/AddMenuItem";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <addMenuItem />
+      <AddMenuItem />
     </div>
   );
 }
 
 export default App;
-//
