@@ -26,7 +26,7 @@ class AddMenuItem extends React.Component {
 
   addMenuItem = () => {
     let url = "http://localhost:3001/menuItems";
-    axios.post(url, { name: this.menuItem.current.value }).then(response => {
+    axios.post(url, { name: this.menuItemName.current.value }).then(response => {
       // refresh the data
       this.getData();
       // empty the input
@@ -39,12 +39,12 @@ class AddMenuItem extends React.Component {
     return (
       <div>
         <h3>List of menuItems (React)</h3>
-        <input ref={this.menuItem} />
+        <input ref={this.menuItemName} />
         <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>add</button>
         <ul>
           {this.state.menuItems.map(p => (
-            <li key={p.menuItemId}>
-              {p.name} : { p.description } {p.price} <button type="button" className="btn btn-success">Complete</button><button type="button" className="btn btn-danger">Delete</button>
+            <li key={p.menuItemid}>
+              {p.name} <button type="button" className="btn btn-danger">Delete</button>
             </li>
           ))}
         </ul>

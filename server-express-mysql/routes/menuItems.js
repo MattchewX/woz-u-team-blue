@@ -7,10 +7,8 @@ router.get("/", function(req, res, next) {
 });
 
 router.post("/", function(req, res, next) {
-  let menuItem = new models.menuItem();
+  let newMenuItem = new models.menuItem();
   newMenuItem.name = req.body.name;
-  newMenuItem.description = req.body.description;
-  newMenuItem.price = req.body.price;
   newMenuItem.save().then(menuItem => res.json(menuItem));
 });
 
@@ -25,9 +23,7 @@ router.delete("/:id", function(req, res, next) {
 router.put("/:id", function(req, res, next) {
   models.menuItem.update(
     {
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price
+      name: req.body.name
     },
     {
       where: { id: parseInt(req.params.id) }
