@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import '../task.min.css'
-class AddMenuItem extends React.Component {
+class addMenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = { menuItems: [] };
@@ -20,13 +20,13 @@ class AddMenuItem extends React.Component {
     //let url = "http://localhost:5000/projects";
 
     // Express uses port 3001 (react uses 3000)
-    let url = "http://localhost:3001/menuItems";
+    let url = "http://localhost:3001/tasks";
     axios.get(url).then(response => this.setState({ menuItems: response.data }));
   };
 
   addMenuItem = () => {
-    let url = "http://localhost:3001/menuItems";
-    axios.post(url, { name: this.menuItemName.current.value }).then(response => {
+    let url = "http://localhost:3001/tasks";
+    axios.post(url, { name: this.menuItem.current.value }).then(response => {
       // refresh the data
       this.getData();
       // empty the input
@@ -35,16 +35,17 @@ class AddMenuItem extends React.Component {
   };
 
 
+
   render() {
     return (
       <div>
         <h3>List of menuItems (React)</h3>
-        <input ref={this.menuItemName} />
+        <input ref={this.menuItem} />
         <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>add</button>
         <ul>
           {this.state.menuItems.map(p => (
-            <li key={p.menuItemid}>
-              {p.name} <button type="button" className="btn btn-danger">Delete</button>
+            <li key={p.menuItemId}>
+              {p.name} : { p.description } {p.price} <button type="delete button" className="btn btn-success">Complete</button><button type="button" className="btn btn-danger">Delete</button>
             </li>
           ))}
         </ul>
@@ -53,4 +54,4 @@ class AddMenuItem extends React.Component {
   }
 }
 
-export default AddMenuItem;
+export default addMenuItem;
