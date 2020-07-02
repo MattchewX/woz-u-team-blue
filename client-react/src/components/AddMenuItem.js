@@ -45,7 +45,7 @@ class addMenuItem extends React.Component {
         <ul>
           {this.state.menuItems.map(p => (
             <li key={p.menuItemId}>
-              {p.name} : { p.description } {p.price} <button type="delete button" className="btn btn-success">Complete</button><button type="button" className="btn btn-danger">Delete</button>
+              {p.name} : { p.description } {p.price} <button type="button" className="btn btn-success">Complete</button><button type="button" className="btn btn-danger">Delete</button>
             </li>
           ))}
         </ul>
