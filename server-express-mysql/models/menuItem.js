@@ -8,10 +8,15 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
       },
+      DOB: {
+        type: DataTypes.DATEONLY,
+        allowNull: true
+      },
       name: DataTypes.STRING
     },
-    {}
+   {}
   );
+  
   menuItem.associate = function(models) {
     // associations can be defined here
   };
