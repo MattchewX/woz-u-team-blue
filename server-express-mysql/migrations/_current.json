@@ -1,0 +1,13 @@
+{
+    "tables": {
+        "menuItems": {
+            "tableName": "menuItems",
+            "indexes": []
+        },
+        "Tasks": {
+            "tableName": "Tasks",
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
