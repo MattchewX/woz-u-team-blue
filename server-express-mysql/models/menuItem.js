@@ -8,10 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
       },
-      DOB: {
-        type: DataTypes.DATEONLY,
-        allowNull: true
-      },
+     
       name: DataTypes.STRING
     },
    {}
