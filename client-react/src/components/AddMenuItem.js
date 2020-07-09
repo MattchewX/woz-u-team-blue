@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import '../task.min.css'
+import '../menu.min.css'
+import '../menu.custom.css'
 class AddMenuItem extends React.Component {
   constructor(props) {
     super(props);
