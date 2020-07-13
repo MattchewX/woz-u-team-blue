@@ -39,16 +39,21 @@ class AddMenuItem extends React.Component {
   render() {
     return (
       <div>
-        <h3>List of menuItems (React)</h3>
+        <h3 className="text-center">Piper's Pizza Menu  |  Maintenance Mode</h3>
         <input ref={this.menuItemName} />
-        <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>add</button>
-        <ul>
-          {this.state.menuItems.map(p => (
-            <li key={p.menuItemid}>
-              {p.name} <button type="button" className="btn btn-danger">Delete</button>
-            </li>
-          ))}
-        </ul>
+        <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>Add</button>
+        <div className="container">
+              <div className="card-deck mb-3 text-center">
+              {this.state.menuItems.map(p => (
+                <div className="card mb-4 box-shadow">
+                  <div key={p.menuItemid} className="card-header">
+                    <h1 className="card-title">{p.name}</h1>
+                    <button type="button" className="btn btn-lg btn-block btn-danger">Remove</button>
+                  </div>
+                </div>
+              ))}
+              </div>
+            </div>
       </div>
     );
   }
