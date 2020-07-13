@@ -28,14 +28,23 @@ class Menu extends React.Component {
     return (
       <div>
         <h1>Piper's Pizza!</h1>
-        <h3>Menu</h3>
-        <ul>
-          {this.state.menuItems.map(p => (
-            <li key={p.menuItemid}>
-              {p.name} <button type="button" className="btn btn-primary">Add to Cart</button>
-            </li>
-          ))}
-        </ul>
+        <h3 className="text-center">This be our Menu</h3>
+        <div>
+          <div>
+            <div className="container">
+              <div className="card-deck mb-3 text-center">
+              {this.state.menuItems.map(p => (
+                <div className="card mb-4 box-shadow">
+                  <div key={p.menuItemid} className="card-header">
+                    <h1 className="card-title">{p.name}</h1>
+                    <button type="button" className="btn btn-lg btn-block btn-primary">Add to Cart</button>
+                  </div>
+                </div>
+              ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
