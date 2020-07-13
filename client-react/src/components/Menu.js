@@ -1,7 +1,7 @@
 //  Just getting started  //
 import React from "react";
 import axios from "axios";
-import '../task.min.css'
+import '../menu.min.css'
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -27,15 +27,35 @@ class Menu extends React.Component {
   render() {
     return (
       <div>
-        <h1>Piper's Pizza!</h1>
-        <h3>Menu</h3>
-        <ul>
-          {this.state.menuItems.map(p => (
-            <li key={p.menuItemid}>
-              {p.name} <button type="button" className="btn btn-primary">Add to Cart</button>
-            </li>
-          ))}
-        </ul>
+        <header>
+          <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+              <a class="navbar-brand d-flex align-items-center">
+                <strong>Piper's Pizza!</strong>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <br></br>
+        <div>
+          <div>
+            <div className="container">
+              <div className="card-deck mb-3 text-center">
+              {this.state.menuItems.map(p => (
+                <div className="card mb-4 box-shadow">
+                  <div key={p.menuItemid} className="card-header">
+                    <h1 className="card-title">{p.name}</h1>
+                    <button type="button" className="btn btn-lg btn-block btn-primary">Add to Cart</button>
+                  </div>
+                </div>
+              ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

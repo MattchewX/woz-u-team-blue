@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import '../task.min.css'
+import '../menu.min.css'
+import '../menu.custom.css'
 class AddMenuItem extends React.Component {
   constructor(props) {
     super(props);
@@ -34,20 +35,36 @@ class AddMenuItem extends React.Component {
     });
   };
 
-
   render() {
-    return (
+    return (      
       <div>
-        <h3>List of menuItems (React)</h3>
-        <input ref={this.menuItemName} />
-        <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>add</button>
-        <ul>
-          {this.state.menuItems.map(p => (
-            <li key={p.menuItemid}>
-              {p.name} <button type="button" className="btn btn-danger">Delete</button>
-            </li>
-          ))}
-        </ul>
+        <header>
+          <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+              <div class="navbar-brand d-flex align-items-center">
+                <strong>Piper's Pizza!</strong>
+              </div>
+              <div class="navbar-brand d-flex align-items-center">Maintenance Mode</div>
+            </div>
+          </div>
+        </header>
+        <p className="form-inline mt-2 mt-md-0 justify-content-center">
+          <input className="form-control mr-sm-2" ref={this.menuItemName} placeholder="Item Name" />
+          <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>Add Item</button>
+        </p>
+        <div className="container">
+              <div className="card-deck mb-3 text-center">
+              {this.state.menuItems.map(p => (
+                <div className="card mb-4 box-shadow">
+                  <div key={p.menuItemId} className="card-header">
+                    <h1 className="card-title">{p.name}</h1>
+                    <p>{p.id}</p>
+                    <button type="button" className="btn btn-lg btn-block btn-danger">Remove</button>
+                  </div>
+                </div>
+              ))}
+              </div>
+        </div>
       </div>
     );
   }

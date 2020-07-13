@@ -1,11 +1,11 @@
 import React from "react";
-import  AddMenuItem from "./components/AddMenuItem";
+import  Home from "./components/Home";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <AddMenuItem />
+      <Home />
     </div>
   );
 }
