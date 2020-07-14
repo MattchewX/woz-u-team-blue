@@ -23,7 +23,7 @@ class Home extends React.Component {
     </div>
 
      <img class="col-4"
-              src="https://files.slack.com/files-pri/T0ECY9XMK-F01602XBNFQ/scottish-bagpiper-piper-in-national-clothes-vector-13914275.jpg"/>
+              src="https://files.slack.com/files-pri/T0ECY9XMK-F01602XBNFQ/scottish-bagpiper-piper-in-national-clothes-vector-13914275.jpg" alt="null"/>
 
 
 <div class="col-4">
