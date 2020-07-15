@@ -2,8 +2,9 @@
 import React from "react";
 import axios from "axios";
 import '../menu.min.css'
-
-
+import Home from './Home';
+import Cart from './Cart';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -30,11 +31,13 @@ class Menu extends React.Component {
     return (
       <div>
         <header>
-          <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="navbar navbar-dark bg-dark fixed-top box-shadow">
             <div class="container d-flex justify-content-between">
-              <a class="navbar-brand d-flex align-items-center">
+              <div class="navbar-brand d-flex align-items-center">
+                <Link to="/"> 
                 <strong>Piper's Pizza!</strong>
-              </a>
+                </Link>
+              </div>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
               </button>

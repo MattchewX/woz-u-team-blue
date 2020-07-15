@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
-import '../menu.min.css'
-import '../menu.custom.css'
-
-
+import '../menu.min.css';
+import '../menu.custom.css';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
 class AddMenuItem extends React.Component {
   constructor(props) {
     super(props);
@@ -41,10 +42,12 @@ class AddMenuItem extends React.Component {
     return (      
       <div>
         <header>
-          <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="navbar navbar-dark bg-dark fixed-top box-shadow">
             <div class="container d-flex justify-content-between">
-              <div class="navbar-brand d-flex align-items-center">
+            <div class="navbar-brand d-flex align-items-center">
+                <Link to="/"> 
                 <strong>Piper's Pizza!</strong>
+                </Link>
               </div>
               <div class="navbar-brand d-flex align-items-center">Maintenance Mode</div>
             </div>

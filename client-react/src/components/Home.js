@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import '../task.min.css'
 import './home.css'
 
@@ -21,7 +22,7 @@ class Home extends React.Component {
     <div class="row">
   <div class="col-4">
     <ul>
-      Piper's Pizza
+      Piper's Pizza <Link to="/addmenuitem">Maintenance</Link>|<Link to="/menu">Menu</Link>
     </ul>
     </div>
 
