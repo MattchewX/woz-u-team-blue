@@ -29,8 +29,19 @@ class Menu extends React.Component {
   render() {
     return (
       <div>
-        <h1>Piper's Pizza!</h1>
-        <h3 className="text-center">This be our Menu</h3>
+        <header>
+          <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+              <a class="navbar-brand d-flex align-items-center">
+                <strong>Piper's Pizza!</strong>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <br></br>
         <div>
           <div>
             <div className="container">
