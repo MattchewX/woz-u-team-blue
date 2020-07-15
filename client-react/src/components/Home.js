@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import '../task.min.css'
 import './home.css'
+
+
 class Home extends React.Component {
   constructor (props) {
    super(props);
@@ -10,6 +12,7 @@ class Home extends React.Component {
   render() {
    return (
 //<div id= "test">Home Page In Progress</div>
+
 
 <wrapper>
       <div class="header">
