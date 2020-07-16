@@ -42,10 +42,10 @@ class AddMenuItem extends React.Component {
     return (      
       <div>
         <header>
-          <div class="navbar navbar-dark bg-dark fixed-top box-shadow">
+          <div class="navbar navbar-dark bg-dark box-shadow fixed-top">
             <div class="container d-flex justify-content-between">
             <div class="navbar-brand d-flex align-items-center">
-                <Link to="/"> 
+                <Link to="/" className="navbar-brand d-flex align-items-center"> 
                 <strong>Piper's Pizza!</strong>
                 </Link>
               </div>
@@ -53,23 +53,29 @@ class AddMenuItem extends React.Component {
             </div>
           </div>
         </header>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <p className="form-inline mt-2 mt-md-0 justify-content-center">
           <input className="form-control mr-sm-2" ref={this.menuItemName} placeholder="Item Name" />
           <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>Add Item</button>
         </p>
         <div className="container">
-              <div className="card-deck mb-3 text-center">
-              {this.state.menuItems.map(p => (
-                <div className="card mb-4 box-shadow">
-                  <div key={p.menuItemId} className="card-header">
-                    <h1 className="card-title">{p.name}</h1>
-                    <p>{p.id}</p>
-                    <button type="button" className="btn btn-lg btn-block btn-danger">Remove</button>
-                  </div>
-                </div>
-              ))}
+        <div className="row">
+        {this.state.menuItems.map(p => (
+          <div className="col-md-4">
+            <div className="card mb-4 box-shadow">
+              <div key={p.menuItemid} className="card-header">
+                <h1 className="card-title">{p.name}</h1>
+                <button type="button" className="btn btn-lg btn-block btn-secondary">Edit</button>
+                <button type="button" className="btn btn-lg btn-block btn-danger">Remove</button>
               </div>
+            </div>
+          </div>
+        ))}
         </div>
+      </div>
       </div>
     );
   }

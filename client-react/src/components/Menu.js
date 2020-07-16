@@ -15,6 +15,10 @@ class Menu extends React.Component {
     this.getData();
   }
 
+  cartError() {
+    alert("Sorry! Cart not yet implemented.")
+  }
+
   getData = () => {
     // Java Spring Boot uses port 8080
     //let url = "http://localhost:8080/tasks";
@@ -31,37 +35,42 @@ class Menu extends React.Component {
     return (
       <div>
         <header>
-          <div class="navbar navbar-dark bg-dark fixed-top box-shadow">
+          <nav class="navbar navbar-dark bg-dark box-shadow fixed-top">
             <div class="container d-flex justify-content-between">
               <div class="navbar-brand d-flex align-items-center">
-                <Link to="/"> 
+                <Link to="/" className="navbar-brand d-flex align-items-center"> 
                 <strong>Piper's Pizza!</strong>
                 </Link>
               </div>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon" onClick={this.cartError}></span>
               </button>
             </div>
-          </div>
+          </nav>
         </header>
         <br></br>
-        <div>
-          <div>
-            <div className="container">
-              <div className="card-deck mb-3 text-center">
-              {this.state.menuItems.map(p => (
-                <div className="card mb-4 box-shadow">
-                  <div key={p.menuItemid} className="card-header">
-                    <h1 className="card-title">{p.name}</h1>
-                    <button type="button" className="btn btn-lg btn-block btn-primary">Add to Cart</button>
-                  </div>
-                </div>
-              ))}
+        <br></br>
+        <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Our Menu</h1>
+          <p class="lead text-muted">Welcome to Piper's Pizza! We have the best pizza. Don't buy other pizza. Thanks.</p>
+        </div>
+      </section>
+      <div className="container">
+        <div className="row">
+        {this.state.menuItems.map(p => (
+          <div className="col-md-4">
+            <div className="card mb-4 box-shadow">
+              <div key={p.menuItemid} className="card-header">
+                <h1 className="card-title">{p.name}</h1>
+                <button type="button" className="btn btn-lg btn-block btn-primary">Add to Cart</button>
               </div>
             </div>
           </div>
+        ))}
         </div>
       </div>
+    </div>
     );
   }
 }
