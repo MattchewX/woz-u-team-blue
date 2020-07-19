@@ -4,12 +4,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import Home from './components/Home';
-import AddMenuItem from './components/AddMenuItem';
-import Menu from './components/Menu';
-import Cart from './components/Cart';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
 //import React from 'react';
 //import { render } from 'react-dom'
 

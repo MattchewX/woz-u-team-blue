@@ -1,7 +1,6 @@
 import React from "react";
-import axios from "axios";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import '../task.min.css'
+import { BrowserRouter as Link } from 'react-router-dom';
+import '../menu.min.css'
 import './home.css'
 
 
