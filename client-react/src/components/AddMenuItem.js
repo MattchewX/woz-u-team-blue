@@ -2,9 +2,7 @@ import React from "react";
 import axios from "axios";
 import '../menu.min.css';
 import '../menu.custom.css';
-import Home from './Home';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom'
+import { BrowserRouter as Link } from 'react-router-dom';
 class AddMenuItem extends React.Component {
   constructor(props) {
     super(props);
@@ -38,18 +36,28 @@ class AddMenuItem extends React.Component {
     });
   };
 
+  removeMenuItem = props => {
+    let url = "http://localhost:3001/menuItems/" + props;
+    axios.delete(url).then(response => {
+      // refresh the data
+      this.getData();
+    });
+  };
+  
+  //placeholder for updateMenuItem
+
   render() {
     return (      
       <div>
         <header>
-          <div class="navbar navbar-dark bg-dark box-shadow fixed-top">
-            <div class="container d-flex justify-content-between">
-            <div class="navbar-brand d-flex align-items-center">
+          <div className="navbar navbar-dark bg-dark box-shadow fixed-top">
+            <div className="container d-flex justify-content-between">
+            <div className="navbar-brand d-flex align-items-center">
                 <Link to="/" className="navbar-brand d-flex align-items-center"> 
                 <strong>Piper's Pizza!</strong>
                 </Link>
               </div>
-              <div class="navbar-brand d-flex align-items-center">Maintenance Mode</div>
+              <div className="navbar-brand d-flex align-items-center">Maintenance Mode</div>
             </div>
           </div>
         </header>
@@ -66,10 +74,10 @@ class AddMenuItem extends React.Component {
         {this.state.menuItems.map(p => (
           <div className="col-md-4">
             <div className="card mb-4 box-shadow">
-              <div key={p.menuItemid} className="card-header">
+              <div key={p.id} className="card-header">
                 <h1 className="card-title">{p.name}</h1>
                 <button type="button" className="btn btn-lg btn-block btn-secondary">Edit</button>
-                <button type="button" className="btn btn-lg btn-block btn-danger">Remove</button>
+                <button type="button" className="btn btn-lg btn-block btn-danger" onClick={this.removeMenuItem.bind(this, p.id)}>Remove</button>
               </div>
             </div>
           </div>
