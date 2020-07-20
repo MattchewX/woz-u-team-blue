@@ -2,7 +2,9 @@
 import React from "react";
 import axios from "axios";
 import '../menu.min.css'
-import { BrowserRouter as Link } from 'react-router-dom';
+import Home from './Home';
+import Cart from './Cart';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -33,25 +35,25 @@ class Menu extends React.Component {
     return (
       <div>
         <header>
-          <nav className="navbar navbar-dark bg-dark box-shadow fixed-top">
-            <div className="container d-flex justify-content-between">
-              <div className="navbar-brand d-flex align-items-center">
+          <nav class="navbar navbar-dark bg-dark box-shadow fixed-top">
+            <div class="container d-flex justify-content-between">
+              <div class="navbar-brand d-flex align-items-center">
                 <Link to="/" className="navbar-brand d-flex align-items-center"> 
                 <strong>Piper's Pizza!</strong>
                 </Link>
               </div>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon" onClick={this.cartError}></span>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon" onClick={this.cartError}></span>
               </button>
             </div>
           </nav>
         </header>
         <br></br>
         <br></br>
-        <section className="jumbotron text-center">
-        <div className="container">
-          <h1 className="jumbotron-heading">Our Menu</h1>
-          <p className="lead text-muted">Welcome to Piper's Pizza! We have the best pizza. Don't buy other pizza. Thanks.</p>
+        <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Our Menu</h1>
+          <p class="lead text-muted">Welcome to Piper's Pizza! We have the best pizza. Don't buy other pizza. Thanks.</p>
         </div>
       </section>
       <div className="container">

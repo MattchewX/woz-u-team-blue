@@ -4,7 +4,7 @@ import "./App.css";
 import AddMenuItem from './components/AddMenuItem';
 import Menu from './components/Menu';
 import Cart from './components/Cart';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
