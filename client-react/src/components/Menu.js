@@ -35,25 +35,25 @@ class Menu extends React.Component {
     return (
       <div>
         <header>
-          <nav class="navbar navbar-dark bg-dark box-shadow fixed-top">
-            <div class="container d-flex justify-content-between">
-              <div class="navbar-brand d-flex align-items-center">
+          <nav className="navbar navbar-dark bg-dark box-shadow fixed-top">
+            <div className="container d-flex justify-content-between">
+              <div className="navbar-brand d-flex align-items-center">
                 <Link to="/" className="navbar-brand d-flex align-items-center"> 
                 <strong>Piper's Pizza!</strong>
                 </Link>
               </div>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon" onClick={this.cartError}></span>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon" onClick={this.cartError}></span>
               </button>
             </div>
           </nav>
         </header>
         <br></br>
         <br></br>
-        <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Our Menu</h1>
-          <p class="lead text-muted">Welcome to Piper's Pizza! We have the best pizza. Don't buy other pizza. Thanks.</p>
+        <section className="jumbotron text-center">
+        <div className="container">
+          <h1 className="jumbotron-heading">Our Menu</h1>
+          <p className="lead text-muted">Welcome to Piper's Pizza! We have the best pizza. Don't buy other pizza. Thanks.</p>
         </div>
       </section>
       <div className="container">
@@ -63,7 +63,7 @@ class Menu extends React.Component {
             <div className="card mb-4 box-shadow">
               <div key={p.menuItemid} className="card-header">
                 <h1 className="card-title">{p.name}</h1>
-                <button type="button" className="btn btn-lg btn-block btn-primary">Add to Cart</button>
+                <button type="button" className="btn btn-lg btn-block btn-primary" onClick={this.cartError}>Add to Cart</button>
               </div>
             </div>
           </div>
