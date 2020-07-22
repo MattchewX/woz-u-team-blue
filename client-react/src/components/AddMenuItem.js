@@ -44,10 +44,13 @@ class AddMenuItem extends React.Component {
     });
   };
 
-  updateMenuItem = props => {
-    let url ="http://localhost:3001/menuItems/" + props;
-    axios.put(url, newName).then(response => {
+  updateMenuItem = () => {
+    let url ="http://localhost:3001/menuItems/" ;
+    axios.put(url, { name: this.menuItemName.current.value }).then(response => {
+     
       this.getData();
+
+      this.menuItemName.current.value = "";
     });
   };
   //placeholder for updateMenuItem
