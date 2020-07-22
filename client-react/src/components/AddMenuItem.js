@@ -3,6 +3,7 @@ import axios from "axios";
 import '../menu.min.css';
 import '../menu.custom.css';
 import { BrowserRouter as Link } from 'react-router-dom';
+
 class AddMenuItem extends React.Component {
   constructor(props) {
     super(props);
@@ -45,10 +46,16 @@ class AddMenuItem extends React.Component {
     });
   };
 
+  
+
   updateMenuItem = props => {
     let url ="http://localhost:3001/menuItems/" + props;
-    axios.put(url, newName).then(response => {
-      this.getData();
+    newName = user.inputPrompt().value;
+      axios.put(url, newName).then(response => {
+       this.getData();
+
+      this.newName.current.value = "";
+
     });
   };
   //placeholder for updateMenuItem
@@ -84,7 +91,7 @@ class AddMenuItem extends React.Component {
               <div key={p.id} className="card-header">
                 <h1 className="card-title">{p.name}</h1>
                 <button type="button" className="btn btn-lg btn-block btn-secondary">Edit</button>
-                <button type="button" className="btn btn-lg btn-block btn-danger" onClick={this.removeMenuItem.bind(this, p.id)}>Remove</button>
+                <button type="button" className="btn btn-lg btn-block btn-danger" onClick={this.removeMenuItem.bind(this.p.id), this.updateMenuItem.bind(this.p.id)}>Remove</button>
               </div>
             </div>
           </div>
