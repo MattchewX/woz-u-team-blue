@@ -14,6 +14,7 @@ class AddMenuItem extends React.Component {
     this.getData();
   }
 
+  
   getData = () => {
     // Java Spring Boot uses port 8080
     //let url = "http://localhost:8080/tasks";
@@ -43,14 +44,15 @@ class AddMenuItem extends React.Component {
       this.getData();
     });
   };
-
+  
+  newName = this.menuItemName.inputPrompt().value;
+  
   updateMenuItem = () => {
     let url ="http://localhost:3001/menuItems/" ;
-    axios.put(url, { name: this.menuItemName.current.value }).then(response => {
-     
-      this.getData();
+      axios.put(url, { name: this.newName.current.value }).then(response => {
+       this.getData();
 
-      this.menuItemName.current.value = "";
+      this.newName.current.value = "";
     });
   };
   //placeholder for updateMenuItem
