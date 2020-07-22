@@ -44,6 +44,7 @@ class AddMenuItem extends React.Component {
       this.getData();
     });
   };
+<<<<<<< HEAD
   
   newName = this.menuItemName.inputPrompt().value;
   
@@ -53,6 +54,13 @@ class AddMenuItem extends React.Component {
        this.getData();
 
       this.newName.current.value = "";
+=======
+
+  updateMenuItem = props => {
+    let url ="http://localhost:3001/menuItems/" + props;
+    axios.put(url, newName).then(response => {
+      this.getData();
+>>>>>>> parent of 13d6ac0... Update AddMenuItem.js
     });
   };
   //placeholder for updateMenuItem
