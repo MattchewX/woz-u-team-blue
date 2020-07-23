@@ -9,6 +9,8 @@ router.get("/", function(req, res, next) {
 router.post("/", function(req, res, next) {
   let newMenuItem = new models.menuItem();
   newMenuItem.name = req.body.name;
+  newMenuItem.desc = req.body.desc;
+  newMenuItem.price = req.body.price;
   newMenuItem.save().then(menuItem => res.json(menuItem));
 });
 
@@ -23,7 +25,9 @@ router.delete("/:id", function(req, res, next) {
 router.put("/:id", function(req, res, next) {
   models.menuItem.update(
     {
-      name: req.body.name
+      name: req.body.name,
+      desc: req.body.desc,
+      price: req.body.price
     },
     {
       where: { id: parseInt(req.params.id) }
