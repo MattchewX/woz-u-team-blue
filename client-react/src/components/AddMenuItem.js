@@ -10,6 +10,8 @@ class AddMenuItem extends React.Component {
     super(props);
     this.state = { menuItems: [] };
     this.menuItemName = React.createRef();
+    this.menuItemDesc = React.createRef();
+    this.menuItemPrice = React.createRef();
   }
 
   componentDidMount() {
@@ -31,11 +33,17 @@ class AddMenuItem extends React.Component {
 
   addMenuItem = () => {
     let url = "http://localhost:3001/menuItems";
-    axios.post(url, { name: this.menuItemName.current.value }).then(response => {
+    axios.post(url, { 
+      name: this.menuItemName.current.value,
+      description: this.menuItemDesc.current.value,
+      price: this.menuItemPrice.current.value
+     }).then(response => {
       // refresh the data
       this.getData();
       // empty the input
       this.menuItemName.current.value = "";
+      this.menuItemDesc.current.value = "";
+      this.menuItemPrice.current.value = "";
     });
   };
 
@@ -47,9 +55,9 @@ class AddMenuItem extends React.Component {
     });
   };
 
-  updateMenuItem = () => {
-    let url = "http://localhost:3001/menuItems";
-    axios.put({}).then(response => {
+  updateMenuItem = props => {
+    let url = "http://localhost:3001/menuItems/" + props;
+    axios.put(url, {}).then(response => {
       this.getData();
     });
   };
@@ -76,7 +84,9 @@ class AddMenuItem extends React.Component {
         <br></br>
         <br></br>
         <p className="form-inline mt-2 mt-md-0 justify-content-center">
-          <input className="form-control mr-sm-2" ref={this.menuItemName} placeholder="Item Name" />
+          <input className="form-control mr-sm-2" ref={this.menuItemName} placeholder="Name" />
+          <input className="form-control mr-sm-2" ref={this.menuItemDesc} placeholder="Description" />
+          <input className="form-control mr-sm-2" ref={this.menuItemPrice} placeholder="Price" />
           <button type="button" className="btn btn-primary" onClick={this.addMenuItem}>Add Item</button>
         </p>
         <div className="container">
@@ -86,7 +96,7 @@ class AddMenuItem extends React.Component {
             <div className="card mb-4 box-shadow">
               <div key={p.id} className="card-header">
                 <h1 className="card-title">{p.name}</h1>
-                <button type="button" className="btn btn-lg btn-block btn-secondary">Edit</button>
+                <button type="button" className="btn btn-lg btn-block btn-secondary" onClick={this.updateMenuItem.bind(this, p.id)}>Edit</button>
                 <button type="button" className="btn btn-lg btn-block btn-danger" onClick={this.removeMenuItem.bind(this, p.id)}>Remove</button>
               </div>
             </div>

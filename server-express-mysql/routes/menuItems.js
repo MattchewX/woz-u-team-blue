@@ -9,7 +9,7 @@ router.get("/", function(req, res, next) {
 router.post("/", function(req, res, next) {
   let newMenuItem = new models.menuItem();
   newMenuItem.name = req.body.name;
-  newMenuItem.desc = req.body.desc;
+  newMenuItem.description = req.body.description;
   newMenuItem.price = req.body.price;
   newMenuItem.save().then(menuItem => res.json(menuItem));
 });
@@ -26,7 +26,7 @@ router.put("/:id", function(req, res, next) {
   models.menuItem.update(
     {
       name: req.body.name,
-      desc: req.body.desc,
+      description: req.body.description,
       price: req.body.price
     },
     {
