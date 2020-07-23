@@ -13,14 +13,6 @@
                     "field": "name",
                     "seqType": "Sequelize.STRING"
                 },
-                "price": {
-                    "field": "price",
-                    "seqType": "Sequelize.DECIMAL"
-                },
-                "description": {
-                    "field": "description",
-                    "seqType": "Sequelize.STRING"
-                },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",
@@ -65,5 +57,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 1
 }

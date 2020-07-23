@@ -1,6 +1,5 @@
-"use strict";
-module.exports = (sequelize, DataTypes) => {
-  const menuItem = sequelize.define(
+module.exports = function(sequelize, DataTypes) {
+  return sequelize.define(
     "menuItem",
     {
       id: {
@@ -9,13 +8,12 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true
       },
      
-      name: DataTypes.STRING
+      name: DataTypes.STRING,
+      price: DataTypes.DECIMAL,
+      description: DataTypes.STRING
     },
-   {}
+   {
+     tableName: 'menuItems'
+   }
   );
-  
-  menuItem.associate = function(models) {
-    // associations can be defined here
-  };
-  return menuItem;
 };

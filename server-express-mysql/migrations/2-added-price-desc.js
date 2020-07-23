@@ -5,36 +5,38 @@ var Sequelize = require('sequelize');
 /**
  * Actions summary:
  *
- * createTable "menuItems", deps: []
- * createTable "Tasks", deps: []
+ * addColumn "description" to table "menuItems"
+ * addColumn "price" to table "menuItems"
  *
  **/
 
 var info = {
-    "revision": 1,
-    "name": "initial_migration",
-    "created": "2020-07-03T02:07:52.765Z",
+    "revision": 2,
+    "name": "added-price-desc",
+    "created": "2020-07-23T02:29:55.959Z",
     "comment": ""
 };
 
 var migrationCommands = [{
-        fn: "createTable",
+        fn: "addColumn",
         params: [
             "menuItems",
+            "description",
             {
-
-            },
-            {}
+                "type": Sequelize.STRING,
+                "field": "description"
+            }
         ]
     },
     {
-        fn: "createTable",
+        fn: "addColumn",
         params: [
-            "Tasks",
+            "menuItems",
+            "price",
             {
-
-            },
-            {}
+                "type": Sequelize.DECIMAL,
+                "field": "price"
+            }
         ]
     }
 ];

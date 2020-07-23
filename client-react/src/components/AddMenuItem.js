@@ -46,18 +46,13 @@ class AddMenuItem extends React.Component {
     });
   };
 
-  
-
-  updateMenuItem = props => {
-    let url ="http://localhost:3001/menuItems/" + props;
-    newName = user.inputPrompt().value;
-      axios.put(url, newName).then(response => {
-       this.getData();
-
-      this.newName.current.value = "";
-
+  updateMenuItem = () => {
+    let url = "http://localhost:3001/menuItems";
+    axios.put({}).then(response => {
+      this.getData();
     });
   };
+
   //placeholder for updateMenuItem
 
   render() {
@@ -91,7 +86,7 @@ class AddMenuItem extends React.Component {
               <div key={p.id} className="card-header">
                 <h1 className="card-title">{p.name}</h1>
                 <button type="button" className="btn btn-lg btn-block btn-secondary">Edit</button>
-                <button type="button" className="btn btn-lg btn-block btn-danger" onClick={this.removeMenuItem.bind(this.p.id), this.updateMenuItem.bind(this.p.id)}>Remove</button>
+                <button type="button" className="btn btn-lg btn-block btn-danger" onClick={this.removeMenuItem.bind(this.p.id)}>Remove</button>
               </div>
             </div>
           </div>
