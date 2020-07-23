@@ -15,7 +15,7 @@
                 },
                 "price": {
                     "field": "price",
-                    "seqType": "Sequelize.DECIMAL"
+                    "seqType": "Sequelize.DECIMAL(4, 2)"
                 },
                 "description": {
                     "field": "description",
@@ -65,5 +65,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 4
 }
