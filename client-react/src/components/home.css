@@ -30,4 +30,39 @@
     object-fit: cover;
     
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
+
+ #header {
+  width: 100%;
+  background-color: red;
+  
+  
+  
+  
+  color:white;
+  
+
+  text-align: center;
+  margin-left: 0; 
+  padding-left: 0;
+  list-style: none;
+    
+ }
+ 
+ h3{
+color:white;
+
+ }
+ 
+ 
+ 
   
