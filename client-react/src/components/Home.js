@@ -12,32 +12,52 @@ class Home extends React.Component {
   componentDidMount() {}
   render() {
    return (
-//<div id= "test">Home Page In Progress</div>
-
-
-<wrapper>
-      <div class="header">
 
     
-    <div class="row">
-  <div class="col-4">
+
+
+<body>
+      <div class="wrapper">
+
+    
+    <div class="row" id="header">
+  <div class="col-6">
+    <h3>
     <ul>
-      Piper's Pizza <Link to="/addmenuitem">Maintenance</Link>|<Link to="/menu">Menu</Link>
+      Piper's Pizza  <Link to="/addmenuitem">Maintenance</Link>|<Link to="/menu">Menu</Link>
     </ul>
+    </h3>
     </div>
-
-     <img class="col-4"
-              src="https://files.slack.com/files-pri/T0ECY9XMK-F01602XBNFQ/scottish-bagpiper-piper-in-national-clothes-vector-13914275.jpg" alt="null"/>
-
-
-<div class="col-4">
+    <div class="col-6">
+      <h3>
     <ul>
       (1-800-PIPERSPIZZA)
-    </ul>          
-  </div>
-  </div>
+    </ul>
+    </h3>
 </div>
-</wrapper>
+</div>
+
+
+      <div class="pictures">
+         <div class="row">
+          <img class="col-4" src="images/pizza-3000273_1280.jpg"/>
+          <img class="col-4" src="images/iStock-866244994.jpg"/>
+          <img class="col-4" src="images/pizza-1179404_1280.jpg"/>
+          </div>
+          </div>
+         
+
+        
+
+
+<div class="footer">
+  <p>123 Piper Lane</p>
+  <p>Piper City ,Piper Land USA</p>
+
+  
+</div>
+</div>
+</body>
 
 
     
