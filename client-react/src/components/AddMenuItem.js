@@ -55,7 +55,7 @@ class AddMenuItem extends React.Component {
     });
   };
 
-  updateMenuItem = props => {
+  editMenuItem = props => {
     let url = "http://localhost:3001/menuItems/" + props;
     axios.put(url, {}).then(response => {
       this.getData();
