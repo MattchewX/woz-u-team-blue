@@ -61,9 +61,17 @@ class Menu extends React.Component {
         {this.state.menuItems.map(p => (
           <div className="col-md-4">
             <div className="card mb-4 box-shadow">
-              <div key={p.menuItemid} className="card-header">
+            <div key={p.id} className="card-header">
                 <h1 className="card-title">{p.name}</h1>
-                <button type="button" className="btn btn-lg btn-block btn-primary" onClick={this.cartError}>Add to Cart</button>
+              </div>
+              <div className="card-body">
+                <p className="card-text">{p.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                  <button type="button" className="btn btn-md btn-primary" onClick={this.cartError}>Add to Cart</button>
+                  </div>
+                <small class="text">${p.price}</small>
+                </div>
               </div>
             </div>
           </div>
