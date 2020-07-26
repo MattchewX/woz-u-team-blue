@@ -96,7 +96,7 @@ class AddMenuItem extends React.Component {
             <div className="card mb-4 box-shadow">
               <div key={p.id} className="card-header">
                 <h1 className="card-title">{p.name}</h1>
-                <button type="button" className="btn btn-lg btn-block btn-secondary" onClick={this.updateMenuItem.bind(this, p.id)}>Edit</button>
+                <button type="button" className="btn btn-lg btn-block btn-secondary" onClick={this.editMenuItem.bind(this, p.id)}>Edit</button>
                 <button type="button" className="btn btn-lg btn-block btn-danger" onClick={this.removeMenuItem.bind(this, p.id)}>Remove</button>
               </div>
             </div>
