@@ -24,7 +24,7 @@ class Home extends React.Component {
   <div class="col-6">
     <h3>
     <ul>
-      Piper's Pizza  <Link to="/addmenuitem">Maintenance</Link>|<Link to="/menu">Menu</Link>
+      Piper's Pizza
     </ul>
     </h3>
     </div>
@@ -47,7 +47,16 @@ class Home extends React.Component {
           </div>
          
 
-        
+      <div class="container col-12">
+        <div class="row justify-content-center">
+        <Link to="/menu">
+          <button type="button" class="btn btn-lg btn-primary">Menu</button>
+        </Link>
+        <Link to="/addmenuitem">
+          <button type="button" class="btn btn-lg btn-secondary">Maintenance</button>
+        </Link>
+        </div>
+      </div>
 
 
 <div class="footer">
